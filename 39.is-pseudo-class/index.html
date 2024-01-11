@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :is(ul, ol) li {
+        font-size: 3rem;
+      }
+
+      ul li,
+      ol li {
+        font-size: 2rem;
+      }
+
+      /* :is(section, article, aside, nav) :is(h1, h2, h3, h4, h5, h6) {
+        color: #bada55;
+      }
+
+      section h1,
+      section h2,
+      section h3,
+      section h4,
+      section h5,
+      section h6,
+      article h1,
+      article h2,
+      article h3,
+      article h4,
+      article h5,
+      article h6,
+      aside h1,
+      aside h2,
+      aside h3,
+      aside h4,
+      aside h5,
+      aside h6,
+      nav h1,
+      nav h2,
+      nav h3,
+      nav h4,
+      nav h5,
+      nav h6 {
+        color: #bada55;
+      }
+
+      ul .list1,
+      ul .list3 {
+        color: #bada55;
+      }
+
+      ul :is(.list1, .list3) {
+        color: #bada55;
+      } */
+
+      /* not-real은 유효하지 않은 selector */
+      /* p,
+      p::not-real {
+        color: red; 
+      }
+
+      :is(p, p::not-real) {
+        color: red;
+      } */
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>list1</li>
+    </ul>
+
+    <p>반갑습니다.</p>
+
+    <ol>
+      <li>호호</li>
+    </ol>
+  </body>
+</html>

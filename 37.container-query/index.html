@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        container-type: inline-size;
+        container-name: item-style;
+        border: 3px solid gray;
+        width: 200px;
+        height: 200px;
+        display: grid;
+      }
+      .item {
+        width: 100px;
+        height: 100px;
+        background: lightblue;
+      }
+
+      @container item-style (max-width: 200px) {
+        .item {
+          background: lightgray;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <input
+      type="range"
+      value="200"
+      id="width"
+      name="width"
+      min="200"
+      max="300"
+      onInput="handleInput(event)"
+    />
+    <br />
+    
+    <div class="container">
+      <div class="item"></div>
+    </div>
+    <script>
+      const container = document.querySelector(".container");
+      function handleInput(e) {
+        container.style.width = `${e.target.value}px`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            display: block;
+
+            object-position: center;
+            object-fit: cover;
+        }
+
+        .blur-load {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blur-load.loaded>img {
+            opacity: 1;
+        }
+
+        .blur-load>img {
+            opacity: 0;
+            transform: opacity 200ms ease-in-out;
+        }
+    </style>
+</head>
+
+<body style="margin: 0;">
+    <div class="grid">
+        <div class="blur-load" style="background-image: url(thumb-images/1-thumb.jpg);">
+            <img src="images/1.jpg" loading="lazy" />
+        </div>
+        <div class="blur-load" style="background-image: url(thumb-images/2-thumb.jpg);">
+            <img src="images/2.jpg" loading="lazy" />
+        </div>
+        <div class="blur-load" style="background-image: url(thumb-images/3-thumb.jpg);">
+            <img src="images/3.jpg" loading="lazy" />
+        </div>
+        <div class="blur-load" style="background-image: url(thumb-images/4-thumb.jpg);">
+            <img src="images/4.jpg" loading="lazy" />
+        </div>
+        <div class="blur-load" style="background-image: url(thumb-images/5-thumb.jpg);">
+            <img src="images/5.jpg" loading="lazy" />
+        </div>
+        <div class="blur-load" style="background-image: url(thumb-images/6-thumb.jpg);">
+            <img src="images/6.jpg" loading="lazy" />
+        </div>
+        <div class="blur-load" style="background-image: url(thumb-images/7-thumb.jpg);">
+            <img src="images/7.jpg" loading="lazy" />
+        </div>
+        <div class="blur-load" style="background-image: url(thumb-images/8-thumb.jpg);">
+            <img src="images/8.jpg" loading="lazy" />
+        </div>
+        <div class="blur-load" style="background-image: url(thumb-images/9-thumb.jpg);">
+            <img src="images/9.jpg" loading="lazy" />
+        </div>
+        <div class="blur-load" style="background-image: url(thumb-images/10-thumb.jpg);">
+            <img src="images/10.jpg" loading="lazy" />
+        </div>
+        <div class="blur-load" style="background-image: url(thumb-images/11-thumb.jpg);">
+            <img src="images/11.jpg" loading="lazy" />
+        </div>
+        <div class="blur-load" style="background-image: url(thumb-images/12-thumb.jpg);">
+            <img src="images/12.jpg" loading="lazy" />
+        </div>
+        <div class="blur-load" style="background-image: url(thumb-images/13-thumb.jpg);">
+            <img src="images/13.jpg" loading="lazy" />
+        </div>
+        <div class="blur-load" style="background-image: url(thumb-images/14-thumb.jpg);">
+            <img src="images/14.jpg" loading="lazy" />
+        </div>
+        <div class="blur-load" style="background-image: url(thumb-images/15-thumb.jpg);">
+            <img src="images/15.jpg" loading="lazy" />
+        </div>
+        <div class="blur-load" style="background-image: url(thumb-images/16-thumb.jpg);">
+            <img src="images/16.jpg" loading="lazy" />
+        </div>
+    </div>
+    <script>
+        const blurDivs = document.querySelectorAll('.blur-load');
+        blurDivs.forEach(div => {
+            const img = div.querySelector("img");
+
+            function loaded() {
+                div.classList.add('loaded');
+            }
+
+            img.addEventListener('load', loaded);
+        })
+    </script>
+</body>
+
+</html>

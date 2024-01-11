@@ -1,0 +1,42 @@
+.container {
+    border: 6px solid lightgray;
+    display: flex;
+    width: 600px;
+    height: 800px;
+}
+
+.flex-item {
+    color: black;
+    font-size: 2rem;
+    padding: 1rem;
+    text-align: center;
+    /* align-self: flex-start | flex-end | center | stretch | auto     */
+}
+
+.item-1 {
+    background-color: lightblue;
+
+}
+
+.item-2 {
+    background-color: lightyellow;
+    order: -1;
+}
+
+.item-3 {
+    background-color: lightpink;
+
+}
+
+.item-4 {
+    background-color: lightgreen;
+}
+
+.item-5 {
+    background-color: lightsalmon;
+    order: 2;
+}
+
+.item-6 {
+    background-color: lightskyblue;
+}

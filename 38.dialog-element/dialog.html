@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    dialog {
+      margin-top: 10px;
+      background: lightblue;
+      border: none;
+      border-radius: 1rem;
+    }
+
+    dialog::backdrop {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  <body>
+    <button class="modal1">non-modal dialog 열기</button>
+    <button class="modal2">modal 열기</button>
+    <dialog>
+      <span>안녕하세요.</span>
+
+      <form>
+        <input type="text" />
+        <button formmethod="dialog" type="submit">Cancel</button>
+        <button type="submit">Submit</button>
+      </form>
+    </dialog>
+    <script>
+      const dialog = document.querySelector("dialog");
+      const button1 = document.querySelector(".modal1");
+      const button2 = document.querySelector(".modal2");
+
+      button1.addEventListener("click", () => {
+        dialog.show(); // Opens a non-modal dialog
+      });
+
+      button2.addEventListener("click", () => {
+        dialog.showModal(); // Opens a modal
+      });
+
+    //   dialog.close();
+
+      dialog.addEventListener("click", (e) => {
+        const dialogDimensions = dialog.getBoundingClientRect();
+        if (
+          e.clientX < dialogDimensions.left ||
+          e.clientX > dialogDimensions.right ||
+          e.clientY < dialogDimensions.top ||
+          e.clientY > dialogDimensions.bottom
+        ) {
+          dialog.close();
+        }
+      });
+    </script>
+  </body>
+</html>
